@@ -39,7 +39,7 @@ func newConf() *Conf {
 	webAddr := os.Getenv("WEB_ADDR")
 	secret := os.Getenv("WEB_SECRET")
 	domain := os.Getenv("WEB_DOMAIN")
-	staticAddr := os.Getenv(("WEB_STATIC_ADDR"))
+	staticAddr := os.Getenv("WEB_STATIC_ADDR")
 	if host == "" {
 		host = "127.0.0.1"
 	}
