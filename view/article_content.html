@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="http://caoshuiwei.com/api/v1/static/favicon.ico"  type="image/x-icon" >
-    <script src="http://caoshuiwei.com/api/v1/static/js/axios.min.js"></script>
-    <script src="http://caoshuiwei.com/api/v1/static/js/jquery-3.4.1.min.js"></script>
-    <link rel="stylesheet" href="http://caoshuiwei.com/api/v1/static/css/bootstrap.min.css">
-    <script src="http://caoshuiwei.com/api/v1/static/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="http://59.110.161.11:80/api/v1/static/favicon.ico"  type="image/x-icon" >
+    <script src="http://59.110.161.11:80/api/v1/static/js/axios.min.js"></script>
+    <script src="http://59.110.161.11:80/api/v1/static/js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="http://59.110.161.11:80/api/v1/static/css/bootstrap.min.css">
+    <script src="http://59.110.161.11:80/api/v1/static/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="http://caoshuiwei.com/api/v1/static/css/article_content.css">
-    <script src="http://caoshuiwei.com/api/v1/static/js/showdown.min.js"></script>
+    <link rel="stylesheet" href="http://59.110.161.11:80/api/v1/static/css/article_content.css">
+    <script src="http://59.110.161.11:80/api/v1/static/js/showdown.min.js"></script>
     <title>{{ .Title }}</title>
 </head>
 <style>
@@ -86,7 +86,7 @@
         user_comment = document.getElementById("comment").value
         href = window.location.href
         articleid = href.split("/")[6]
-        url = "http://caoshuiwei.com/api/v1/comment/"+articleid
+        url = "http://59.110.161.11:80/api/v1/comment/"+articleid
         axios.post(url, {
             "nickname": user_nickname,
             "comment": user_comment
@@ -104,7 +104,7 @@
     }
 
     function go_home() {
-        window.location.assign("http://caoshuiwei.com/api/v1/home")
+        window.location.assign("http://59.110.161.11:80/api/v1/home")
     }
 </script>
 </html>
