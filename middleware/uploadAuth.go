@@ -3,7 +3,6 @@ package middleware
 import (
 	"bblog/conf"
 	"fmt"
-	"os"
 
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
@@ -15,9 +14,9 @@ func UploadAuth() gin.HandlerFunc {
 		loginPage := "http://" + conf.G_CONF.Domain + "/api/v1/login"
 		session := sessions.Default(c)
 		pas := session.Get("password")
-		fmt.Println(os.Getenv("WEB_PASSWORD"))
+		fmt.Println(conf.G_CONF.WebsitePassWord)
 		if pas != nil {
-			if pas.(string) == os.Getenv("WEB_PASSWORD") {
+			if pas.(string) == conf.G_CONF.WebsitePassWord {
 				c.Next()
 				return
 			}
