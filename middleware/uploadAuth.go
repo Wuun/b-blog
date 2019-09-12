@@ -12,7 +12,7 @@ import (
 //UploadAuth is middleware use to judge use is admin or not.
 func UploadAuth() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		loginPage := "http://" + conf.G_CONF.WebAddr + "/api/v1/login"
+		loginPage := "http://" + conf.G_CONF.Domain + "/api/v1/login"
 		session := sessions.Default(c)
 		pas := session.Get("password")
 		fmt.Println(os.Getenv("WEB_PASSWORD"))

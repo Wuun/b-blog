@@ -6,5 +6,6 @@ export MYSQL_PORT=8949
 export MYSQL_DB_NAME=blog
 export MYSQL_USER=root
 export WEBSITE_PASS_WORD=6862038abc
-export WEB_ADDR=0.0.0.0:8948
+export WEB_ADDR=127.0.0.1:8948
 export WEB_SECRET=wuun
+export WEB_DOMAIN=59.110.161.11:80
