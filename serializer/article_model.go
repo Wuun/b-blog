@@ -6,14 +6,14 @@ import "github.com/jinzhu/gorm"
 type ArticleModel struct {
 	gorm.Model
 	UUID        string `gorm:"UNIQUE;type:varchar(255)"`
-	Tag         string `json:"tag";gorm:"type:VARCHAR(100)"`
-	Title       string `json:"title";gorm:"type:VARCHAR(100)"`
-	Description string `gorm:"type:VARCHAR(100)";json:"description"`
+	Tag         string `json:"tag" gorm:"type:VARCHAR(100)"`
+	Title       string `json:"title" gorm:"type:VARCHAR(100)"`
+	Description string `gorm:"type:VARCHAR(100)" json:"description"`
 }
 
 //ArticleContent is the gorm model of article`s content
 type ArticleContent struct {
-	ArticleModel   ArticleModel `json:"art_model";gorm:"foreignkey:ArticleModelID"`
+	ArticleModel   ArticleModel `json:"art_model" gorm:"foreignkey:ArticleModelID"`
 	ArticleModelID string       `gorm:"PRIMARY_KEY"`
 	Content        string       `gorm:"type:text;" json:"content"`
 }

@@ -17,13 +17,15 @@ func initMySQL() {
 		err error
 	)
 	sqlAdr := G_CONF.MSUser + ":" + G_CONF.MSPWD + `@tcp(` + G_CONF.MSHost + ":" + G_CONF.MSPort + `)/` + G_CONF.MSDBName + "?charset=utf8&parseTime=true"
+	fmt.Println(sqlAdr)
+	fmt.Println("here")
 	MYSQL_CONNECT, err = gorm.Open("mysql", sqlAdr)
 	if err != nil {
 		panic(err)
 	}
 	fmt.Println("connect MySQL successfully.")
 	Migrate()
-	MYSQL_CONNECT.DB().SetMaxIdleConns(10)
+	MYSQL_CONNECT.DB().SetMaxIdleConns(20)
 	MYSQL_CONNECT.DB().SetMaxOpenConns(100)
 }
 

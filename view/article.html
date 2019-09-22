@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>BBLOG,WELCOME!</title>
-    <link rel="shortcut icon" href="http://59.110.161.11:80/api/v1/static/favicon.ico"  type="image/x-icon" >
+    <link rel="shortcut icon" href="http://127.0.0.1:8948/api/v1/static/favicon.ico"  type="image/x-icon" >
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="http://59.110.161.11:80/api/v1/static/css/article.css">
+    <link rel="stylesheet" href="http://127.0.0.1:8948/api/v1/static/css/article.css">
 </head>
 <style>
 </style>
@@ -32,7 +32,7 @@
             <div class="card-body">
                 <h5 class="card-title">Write Article</h5>
                 <p class="card-text">write article with password,if you have the right.</p>
-                <a href="http://59.110.161.11:80/api/v1/write_article/write" class="btn btn-info">Go</a>
+                <a href="http://127.0.0.1:8948/api/v1/write_article/write" class="btn btn-info">Go</a>
             </div>
         </div>
     </ul>
@@ -56,14 +56,14 @@
 <script>
     function getArticleContent() {
         articleID = event.target.getAttribute("article-id")
-        url = "http://59.110.161.11:80/api/v1/article_content/" + articleID
+        url = "http://127.0.0.1:8948/api/v1/article_content/" + articleID
         window.open(url,"_blank")
         console.log(url)
     }
     function changePage(){
         rawOffset = event.target.innerHTML
         offset = (rawOffset-1) * 4
-        url = "http://59.110.161.11:80/api/v1/home?offset=" + offset
+        url = "http://127.0.0.1:8948/api/v1/home?offset=" + offset
         window.location.assign(url)
     }
 </script>

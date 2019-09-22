@@ -17,6 +17,7 @@ require (
 	github.com/google/shlex v0.0.0-20181106134648-c34317bd91bf // indirect
 	github.com/haya14busa/goplay v1.0.0 // indirect
 	github.com/jinzhu/gorm v1.9.10
+	github.com/joho/godotenv v1.3.0
 	github.com/josharian/impl v0.0.0-20190715203526-f0d59e96e372 // indirect
 	github.com/karrick/godirwalk v1.10.12 // indirect
 	github.com/mdempsky/gocode v0.0.0-20190203001940-7fb65232883f // indirect

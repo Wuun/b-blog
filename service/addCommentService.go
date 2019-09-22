@@ -7,9 +7,9 @@ import (
 
 //ArticleCommentSrv is the service of article's comment/
 type ArticleCommentSrv struct {
-	ArticleID string `form:"article_id";json:"article_id"`
-	Author    string `form:"author";json:"author"`
-	Comment   string `form:"comment";json:"comment"`
+	ArticleID string `form:"article_id" json:"article_id"`
+	Author    string `form:"author" json:"author"`
+	Comment   string `form:"comment" json:"comment"`
 }
 
 //Add is use to add comment.

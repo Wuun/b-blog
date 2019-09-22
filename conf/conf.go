@@ -3,6 +3,8 @@ package conf
 import (
 	"os"
 	"time"
+
+	"github.com/joho/godotenv"
 )
 
 //G_CONF is config will be used.
@@ -25,6 +27,7 @@ type Conf struct {
 }
 
 func init() {
+	godotenv.Load()
 	G_CONF = newConf()
 	initMySQL()
 }
@@ -35,7 +38,7 @@ func newConf() *Conf {
 	port := os.Getenv("MYSQL_PORT")
 	dbName := os.Getenv("MYSQL_DB_NAME")
 	user := os.Getenv("MYSQL_USER")
-	webPW := os.Getenv("WEBSITE_PASS_WORD")
+	webPW := os.Getenv("WEB_PASSWORD")
 	webAddr := os.Getenv("WEB_ADDR")
 	secret := os.Getenv("WEB_SECRET")
 	domain := os.Getenv("WEB_DOMAIN")

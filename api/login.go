@@ -1,10 +1,10 @@
 package api
 
 import (
+	"bblog/conf"
 	"bblog/serializer"
 	"encoding/json"
 	"io/ioutil"
-	"os"
 
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
@@ -22,6 +22,7 @@ func Authenticate(c *gin.Context) {
 		body []byte
 		err  error
 	)
+
 	if body, err = ioutil.ReadAll(c.Request.Body); err != nil {
 		c.JSON(200, serializer.Response{
 			Status: 4002,
@@ -42,7 +43,7 @@ func Authenticate(c *gin.Context) {
 		return
 	}
 
-	if loginAuth.Password != os.Getenv("WEB_PASSWORD") {
+	if loginAuth.Password != conf.G_CONF.WebsitePassWord {
 		c.JSON(200, serializer.Response{
 			Status: 4002,
 			Msg:    "wrong password.",
@@ -52,7 +53,7 @@ func Authenticate(c *gin.Context) {
 	}
 
 	session := sessions.Default(c)
-	session.Set("password", os.Getenv("WEB_PASSWORD"))
+	session.Set("password", conf.G_CONF.WebsitePassWord)
 	err = session.Save()
 	if err != nil {
 		c.JSON(200, serializer.Response{

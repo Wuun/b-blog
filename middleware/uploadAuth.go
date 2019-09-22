@@ -21,7 +21,7 @@ func UploadAuth() gin.HandlerFunc {
 				return
 			}
 			fmt.Println(pas.(string))
-			c.Redirect(200, loginPage)
+			c.Redirect(307, loginPage)
 			c.Abort()
 		}
 		c.Redirect(307, loginPage)
